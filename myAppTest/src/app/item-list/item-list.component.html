@@ -1,0 +1,35 @@
+
+<div class="container">
+    <h4>ขอตัดเรื่องความสวยงามออกเนื่องโจทย์ไม่ได้ระบุไว้เลยใส่ไว้แค่ Logic</h4>
+    <h2>ข้อ1</h2>
+    <div class="box">
+        <h2>รายการ</h2>
+        <ul class="list">
+            <li *ngFor="let item of items" (click)="selectItem(item)" [class.selected]="item.selected">
+                {{ item.name }}
+            </li>
+        </ul>
+    </div>
+    <div class="container-text">
+        <input type="text" class="centered-input" [(ngModel)]="selectedItemName" placeholder="Enter an item" />
+        <button class="submit-button" (click)="submitForm()">Submit</button>
+    </div>
+    <div class="box">
+        <h2>Fruit</h2>
+        <ul class="list">
+            <li *ngFor="let selectedItem of selectedItemsFruit" (click)="deselectItem(selectedItem)">
+                {{ selectedItem.name }}
+            </li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h2>Vegetable</h2>
+        <ul class="list">
+            <li *ngFor="let selectedItem of selectedItemsVegetable" (click)="deselectItem(selectedItem)">
+                {{ selectedItem.name }}
+            </li>
+        </ul>
+    </div>
+    <hr>
+</div>
